@@ -38,9 +38,10 @@ ansible --version
 
 #################################################################
 ## Création du dossier etc/ansible/hosts puis création du fichier inventory.ini dans ce dossier
-# Le dossier de base pour Ansible est etc/ansible. Ensuite, on réparti en sous dossier en fonctions des types de fichiers.
-# Le dossier hosts contient le fichier inventory.ini permettant d'indiquer à Ansible toutes les machines hôtes qui sont dans le parc et qu'il peut contrôler
+Le dossier de base pour Ansible est etc/ansible. Ensuite, on réparti en sous dossier en fonctions des types de fichiers.
+Le dossier hosts contient le fichier inventory.ini permettant d'indiquer à Ansible toutes les machines hôtes qui sont dans le parc et qu'il peut contrôler
+
 sudo mkdir /etc/ansible/hosts
 sudo vi /etc/ansible/hosts/inventory.ini
 
-# Pour une raison que j'ignore, Ansible a besoin d'avoir accès à ma clé privé pour se connecter aux autres machines. Droits set en 604 pour autres (SECURITY THREAT)
+Pour une raison que j'ignore, Ansible a besoin d'avoir accès à ma clé privé pour se connecter aux autres machines. Droits set en 604 pour autres (SECURITY THREAT)
