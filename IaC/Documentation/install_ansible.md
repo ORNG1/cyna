@@ -43,3 +43,11 @@ Le dossier hosts contient le fichier inventory.ini permettant d'indiquer à Ansi
 
 sudo mkdir /home/tech/ansible
 sudo vi /home/tech/ansible/inventory.ini
+
+Voir fichier inventory.ini dans le repo.
+
+## Vérification de la connexion avec les hôtes
+
+Vérification de la connexion avec une commande ad-hoc 
+
+ansible all -i inventory.ini -m ping
