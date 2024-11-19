@@ -19,23 +19,23 @@ Documentation :
 
 ## Mettre à jour les packets et repositories de sources
 ```
-# sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade
 ```
 ## Installer python et l'ajouter au PATH de l'OS pour que les commandes soient reconnues de n'importe où
 ```
-# sudo apt install python3
+sudo apt install python3
 ```
 
 ## Verifier que Python est bien installé. Affiche la version de python installée
 ```
-# python3 -V
+python3 -V
 ```
 
 ## Installer pipx pour installer Ansible par la suite. Ajout de pipx au PATH de l'OS
 ```
 sudo apt install pipx
 pipx ensurepath
-``
+```
 
 ## Installer Ansible (full package) en utilisant pipx 
 ```
