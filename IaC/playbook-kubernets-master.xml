@@ -1,0 +1,38 @@
+- name: Install Kubernetes on a single node
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Update package lists
+      apt:
+        update_cache: yes
+
+    - name: Install required packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - containerd.io
+        - kubeadm
+        - kubelet
+        - kubectl
+
+    - name: Configure containerd
+      template:
+        src: containerd.conf.j2
+        dest: /etc/containerd/config.toml
+
+    - name: Start containerd service
+      service:
+        name: containerd
+        state: restarted
+
+    - name: Initialize Kubernetes control plane
+      command: kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=10.0.0.10
+      register: kubeadm_init_output
+
+    - name: Configure kubectl
+      copy:
+        src: kubeconfig
+        dest: ~/.kube/config
+        mode: 0600
