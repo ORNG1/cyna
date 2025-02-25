@@ -1,4 +1,4 @@
-Installation de Terraform sur une machine linux
+# Installation de Terraform sur une machine linux
 
 Lien de la documentation : https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 
@@ -47,3 +47,4 @@ sudo apt-get install terraform
 ```
 terraform -help
 ```
+
