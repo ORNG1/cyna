@@ -92,3 +92,13 @@ Signed-by: /etc/apt/keyrings/microsoft.gpg" | sudo tee /etc/apt/sources.list.d/a
 sudo apt-get update
 sudo apt-get install azure-cli
 ```
+----------------------------------------------------------------
+### Connexion à Azure
+Se connecter au compte que vous voulez utiliser pour Azure
+```
+az login 
+```
+Prendre le SubscriptionID et remplacer SUBSCRIPTION_ID par le votre
+```
+az ad sp create-for-rbac --role="Contributor"
+--scopes="/subscriptions/SUBSCRIPTION_ID"
